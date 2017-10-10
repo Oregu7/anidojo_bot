@@ -1,0 +1,22 @@
+{
+  "name": "anidojo_bot",
+  "version": "0.0.1",
+  "description": "\"# My project's README\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Sareth7@bitbucket.org/Sareth7/anidojo_bot.git"
+  },
+  "author": "Baam",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/Sareth7/anidojo_bot#readme",
+  "dependencies": {
+    "config": "^1.26.2",
+    "feedparser": "^2.2.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
