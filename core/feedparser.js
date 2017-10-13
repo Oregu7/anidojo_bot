@@ -7,7 +7,7 @@ module.exports = (url) => {
         let result = [];
         let req = request({
             uri: url,
-            headers: config.get('Customer.feedparserHeaders')
+            headers: config.get('Customer.feedparser.headers')
         });
         let feedparser = new FeedParser();
 
@@ -35,7 +35,7 @@ module.exports = (url) => {
             var item;
             let stream = this; // `this` is `feedparser`, which is a stream
             while (item = stream.read()) {
-                result.push({ title: item.title, link: item.link });
+                result.push({ title: item.title, url: item.link });
             };
         });
 

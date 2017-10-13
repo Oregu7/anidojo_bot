@@ -1,12 +1,43 @@
 {
     "Customer": {
-        "feedparserHeaders": {
-            "Connection": "keep-alive",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.38 Safari/537.36",
-            "Referer": "https://www.google.com/",
-            "Accept-Encoding": "*",
-            "Accept-Language": "ru-ru,ru;q=0.8,en-us;q=0.6,en;q=0.4"
+        "feedparser": {
+            "headers": {
+                "Connection": "keep-alive",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.38 Safari/537.36",
+                "Referer": "https://www.google.com/",
+                "Accept-Encoding": "*",
+                "Accept-Language": "ru-ru,ru;q=0.8,en-us;q=0.6,en;q=0.4"
+            },
+            "data": [{
+                    "site": "http://online.anidub.com",
+                    "rss": "http://online.anidub.com/rss.xml",
+                    "type": "anime",
+                    "start": 0,
+                    "last": 20
+                },
+                {
+                    "site": "http://animevost.org",
+                    "rss": "http://animevost.org/rss.xml",
+                    "type": "anime",
+                    "start": 0,
+                    "last": 10
+                },
+                {
+                    "site": "http://readmanga.me",
+                    "rss": "http://readmanga.me/rss/index",
+                    "type": "manga",
+                    "start": 5,
+                    "last": 35
+                },
+                {
+                    "site": "https://mangaclub.ru",
+                    "rss": "https://mangaclub.ru/rss.xml",
+                    "type": "manga",
+                    "start": 0,
+                    "last": 10
+                }
+            ]
         }
     }
 }
