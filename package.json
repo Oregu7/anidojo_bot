@@ -15,7 +15,11 @@
   "homepage": "https://bitbucket.org/Sareth7/anidojo_bot#readme",
   "dependencies": {
     "config": "^1.26.2",
+    "dirty": "^1.1.0",
     "feedparser": "^2.2.1",
+    "immutable": "^3.8.2",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.12.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   }
