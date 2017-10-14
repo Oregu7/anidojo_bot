@@ -5,13 +5,19 @@ const prepareChaptersUpdates = require('./prepareChaptersUpdates');
 const feedparser = require('../../core/feedparser');
 const jobFactory = require('../../core/jobFactory');
 
-async function animanga() {
+async function animanga(sendMessage) {
     let animangaList = config.get('Customer.feedparser.data');
     for (let animanga of animangaList) {
         try {
             let newChapters = (await feedparser(animanga.rss)).slice(animanga.start, animanga.last);
             let oldChapters = storage.get(animanga.site) || [];
-            prepareChaptersUpdates(animanga.site, getChaptersUpdates(oldChapters, newChapters));
+            let updates = getChaptersUpdates(oldChapters, newChapters);
+            if (updates) {
+                let message = prepareChaptersUpdates(animanga, updates);
+                sendMessage(message.compile());
+            } else {
+                console.info(`${animanga.site} => none`);
+            }
             storage.set(animanga.site, newChapters);
         } catch (err) {
             console.error(err);
