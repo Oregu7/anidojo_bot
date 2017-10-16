@@ -7,13 +7,20 @@ const jobFactory = require('../../core/jobFactory');
 const prepareUpdatedPosts = require('./prepareUpdatedPosts');
 
 async function news(sendMessage) {
+    //линка на feed с новостями
     let link = "http://anidub.com/feed/";
+    //получаем список новостей из ленты, в данные будет включено поле description, из-за feedparser(_, true) 
     let postsList = await feedparser(link, true);
+    //получаем список предыдущих новостей
     let oldPosts = storage.get(link) || [];
+    //получаем новые посты
     let updates = getUpdates(oldPosts, postsList);
+    //если он есть...
     if (updates) {
         try {
+            //подготавливаем и отправляем новые посты
             prepareUpdatedPosts(sendMessage, updates);
+            //обновляем хэши(hashUpdates) полученных новостей
             storage.set(link, hashUpdates(postsList));
         } catch (err) {
             console.log(err);
@@ -23,4 +30,5 @@ async function news(sendMessage) {
     }
 }
 
-module.exports = jobFactory(news, 70 * 1000);
+//экспортируем новую работу
+module.exports = jobFactory(news, config.get("Customer.jobs.news.time"));

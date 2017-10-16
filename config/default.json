@@ -38,6 +38,17 @@
                     "last": 10
                 }
             ]
+        },
+        "jobs": {
+            "animanga": {
+                "time": 1500000
+            },
+            "randomManga": {
+                "time": 3600000
+            },
+            "news": {
+                "time": 10800000
+            }
         }
     }
 }

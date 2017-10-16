@@ -2,6 +2,11 @@ const FeedParser = require('feedparser');
 const config = require('config');
 const request = require('request'); // for fetching the feed
 
+/*
+    получаем данные из rss-ленты
+    @url [string] - ссылка на rss-ленту из которой будут доставаться данные
+    @desc [boolean] - опциональный параметр. Отвечает за добавление свойства description в item list (по умолчанию title, url) 
+*/
 module.exports = (url, desc = false) => {
     return new Promise((resolve, reject) => {
         let result = [];
