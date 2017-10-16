@@ -14,7 +14,7 @@
                     "rss": "http://online.anidub.com/rss.xml",
                     "type": "anime",
                     "start": 0,
-                    "last": 20
+                    "last": 10
                 },
                 {
                     "site": "http://animevost.org",
@@ -28,7 +28,7 @@
                     "rss": "http://readmanga.me/rss/index",
                     "type": "manga",
                     "start": 5,
-                    "last": 35
+                    "last": 15
                 },
                 {
                     "site": "https://mangaclub.ru",

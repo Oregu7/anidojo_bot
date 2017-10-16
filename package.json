@@ -19,9 +19,9 @@
         "dirty": "^1.1.0",
         "dotenv": "^4.0.0",
         "feedparser": "^2.2.1",
-        "immutable": "^3.8.2",
         "lodash": "^4.17.4",
         "mongoose": "^4.12.1",
+        "object-hash": "^1.2.0",
         "request": "^2.83.0",
         "request-promise": "^4.2.2",
         "telro": "https://Sareth7@bitbucket.org/Sareth7/telro"

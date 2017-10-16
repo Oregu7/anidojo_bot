@@ -2,7 +2,7 @@ const FeedParser = require('feedparser');
 const config = require('config');
 const request = require('request'); // for fetching the feed
 
-module.exports = (url) => {
+module.exports = (url, desc = false) => {
     return new Promise((resolve, reject) => {
         let result = [];
         let req = request({
@@ -35,7 +35,9 @@ module.exports = (url) => {
             var item;
             let stream = this; // `this` is `feedparser`, which is a stream
             while (item = stream.read()) {
-                result.push({ title: item.title, url: item.link });
+                let chapter = { title: item.title, url: item.link };
+                if (desc) chapter.description = item.description;
+                result.push(chapter);
             };
         });
 
