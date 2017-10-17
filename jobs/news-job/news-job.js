@@ -6,7 +6,7 @@ const feedparser = require('../../core/feedparser');
 const jobFactory = require('../../core/jobFactory');
 const prepareUpdatedPosts = require('./prepareUpdatedPosts');
 
-async function news(sendMessage) {
+async function news(channel) {
     //линка на feed с новостями
     let link = "http://anidub.com/feed/";
     //получаем список новостей из ленты, в данные будет включено поле description, из-за feedparser(_, true) 
@@ -19,7 +19,7 @@ async function news(sendMessage) {
     if (updates) {
         try {
             //подготавливаем и отправляем новые посты
-            prepareUpdatedPosts(sendMessage, updates);
+            prepareUpdatedPosts(channel, updates);
             //обновляем хэши(hashUpdates) полученных новостей
             storage.set(link, hashUpdates(postsList));
         } catch (err) {

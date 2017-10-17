@@ -27,7 +27,7 @@ async function getRandomMangaFromReadManga() {
     return { title, alternativeTitle, url, description, image };
 }
 
-async function randomManga(sendMessage) {
+async function randomManga(channel) {
     //получаем рандомную мангу
     const manga = await getRandomMangaFromReadManga();
     //формируем текст сообщения
@@ -39,7 +39,7 @@ async function randomManga(sendMessage) {
     //добавляем inlineKeyboard (одну кнопку - [ссылку], т.к используем свойство [ url ])
     message.keyboard = createInlineKeyboard({ text: "\u{1F4DC}Читать", url: manga.url });
     //отправляем message в чат
-    sendMessage(message.compile());
+    channel.sendMessage(message.compile());
 }
 
 //экспортируем новую работу

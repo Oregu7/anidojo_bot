@@ -1,7 +1,7 @@
 const { newMessage, createInlineKeyboard } = require('telro').Utils;
 const cheerio = require('cheerio');
 
-function prepareUpdatedPosts(sendMessage, updates) {
+function prepareUpdatedPosts(channel, updates) {
     for (post of updates.newData) {
         //парсим описание постов с помощью cheerio
         let $ = cheerio.load(post.description);
@@ -24,13 +24,13 @@ function prepareUpdatedPosts(sendMessage, updates) {
             description
         });
         //отправляем message в чат
-        sendMessage(message.compile());
+        channel.sendMessage(message.compile());
     }
 }
 
 function getPostMessage(post) {
     //формируем текст сообщения
-    let text = `*${post.title}*
+    let text = `\u{1F4F0} *${post.title}*
     Категории: ${post.categories.join(", ")}
     Тэги: ${post.tags.join(", ")}
     [\u{2063}](${post.img})

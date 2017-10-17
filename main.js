@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Channel = require('./core/channel');
 const jobs = require('./jobs');
 //initialize
 require('dotenv').config();
@@ -8,5 +9,5 @@ mongoose.connect(process.env.DB_TOKEN, {
     reconnectTries: Number.MAX_VALUE,
     useMongoClient: true
 });
-const sendMessage = require("./core/sendMessage")(process.env.BOT_TOKEN, process.env.CHAT_ID);
-jobs.start(sendMessage);
+const channel = new Channel(process.env.BOT_TOKEN, process.env.CHAT_ID);
+jobs.start(channel);

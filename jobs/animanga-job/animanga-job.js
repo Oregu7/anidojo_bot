@@ -7,7 +7,7 @@ const updateDataFromDB = require('./updateDataFromDB');
 const feedparser = require('../../core/feedparser');
 const jobFactory = require('../../core/jobFactory');
 
-async function animanga(sendMessage) {
+async function animanga(channel) {
     //получаем список сайтов, на которые мы подписаны
     let animangaList = config.get('Customer.feedparser.data');
     for (let animanga of animangaList) {
@@ -23,7 +23,7 @@ async function animanga(sendMessage) {
                 //если мы получили обновления, то готовим message для отправки
                 let message = prepareChaptersUpdates(animanga, updates);
                 //отправляем message в чат
-                sendMessage(message.compile());
+                channel.sendMessage(message.compile());
                 //обновляем данные в MongoDB(для vk-бота) и в локальном storage (хэши - hashUpdates)
                 updateDataFromDB(animanga, newChapters);
                 storage.set(animanga.site, hashUpdates(newChapters));
