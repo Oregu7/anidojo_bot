@@ -50,50 +50,7 @@
                 "time": 10800000
             },
             "randomAnimeWallpapers": {
-                "time": 60000,
-                "genres": [
-                    "Action",
-                    "Ecchi",
-                    "Harem",
-                    "Romance",
-                    "School",
-                    "Supernatural",
-                    "Drama",
-                    "Comedy",
-                    "Mystery",
-                    "Police",
-                    "Sports",
-                    "Mecha",
-                    "Sci-Fi",
-                    "Slice of Life",
-                    "Fantasy",
-                    "Adventure",
-                    "Gore",
-                    "Music",
-                    "Psychological",
-                    "Shoujo Ai",
-                    "Yuri",
-                    "Magic",
-                    "Horror",
-                    "Thriller",
-                    "Gender Bender",
-                    "Parody",
-                    "Historical",
-                    "Racing",
-                    "Demons",
-                    "Samurai",
-                    "Super Power",
-                    "Military",
-                    "Dementia",
-                    "Mahou Shounen",
-                    "Game",
-                    "Martial Arts",
-                    "Vampire",
-                    "Kids",
-                    "Mahou Shoujo",
-                    "Space",
-                    "Shounen Ai"
-                ]
+                "time": 1800000
             }
         }
     }
