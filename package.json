@@ -1,31 +1,32 @@
 {
-    "name": "anidojo_bot",
-    "version": "0.0.1",
-    "description": "\"# My project's README\"",
-    "main": "main.js",
-    "scripts": {
-        "start": "pm2 start ./main.js --name anidojo_channel"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://Sareth7@bitbucket.org/Sareth7/anidojo_bot.git"
-    },
-    "author": "Baam",
-    "license": "ISC",
-    "homepage": "https://bitbucket.org/Sareth7/anidojo_bot#readme",
-    "dependencies": {
-        "cheerio": "^1.0.0-rc.2",
-        "config": "^1.26.2",
-        "dirty": "^1.1.0",
-        "dotenv": "^4.0.0",
-        "feedparser": "^2.2.1",
-        "lodash": "^4.17.4",
-        "mongoose": "^4.12.1",
-        "object-hash": "^1.2.0",
-        "pm2": "^2.7.1",
-        "random-anime-wallpapers": "^1.1.0",
-        "request": "^2.83.0",
-        "request-promise": "^4.2.2",
-        "telro": "https://Sareth7@bitbucket.org/Sareth7/telro"
-    }
+  "name": "anidojo_bot",
+  "version": "0.0.1",
+  "description": "\"# My project's README\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "pm2 start ./main.js --name anidojo_channel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Sareth7@bitbucket.org/Sareth7/anidojo_bot.git"
+  },
+  "author": "Baam",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/Sareth7/anidojo_bot#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "config": "^1.26.2",
+    "dirty": "^1.1.0",
+    "dotenv": "^4.0.0",
+    "feedparser": "^2.2.1",
+    "html-to-text": "^3.3.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.12.1",
+    "object-hash": "^1.2.0",
+    "pm2": "^2.7.1",
+    "random-anime-wallpapers": "^1.1.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "telro": "https://Sareth7@bitbucket.org/Sareth7/telro"
+  }
 }
