@@ -9,9 +9,11 @@ const choice = require('../core/choice');
 const jobFactory = require('../core/jobFactory');
 
 async function vkSpider(channel) {
-    let domain = "anime";
-    let posts = await getPosts(domain);
-    if (posts) prepareVKPosts(channel, domain, posts);
+    let domains = ["anime", "anime_gate", "animeiking"];
+    for (let domain of domains) {
+        let posts = await getPosts(domain);
+        if (posts) prepareVKPosts(channel, domain, posts);
+    }
 }
 
 async function getPosts(domain, count = 15) {
@@ -79,4 +81,4 @@ function createVKPhotoMessage(attachment) {
     return { photo, caption };
 }
 
-module.exports = jobFactory(vkSpider, 60000);
+module.exports = jobFactory(vkSpider, config.get("Customer.jobs.vkSpider.time"));

@@ -51,6 +51,9 @@
             },
             "randomAnimeWallpapers": {
                 "time": 1800000
+            },
+            "vkSpider": {
+                "time": 600000
             }
         }
     }
