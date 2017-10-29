@@ -30,6 +30,11 @@ class Channel {
         //отправляем запрос и возвращаем объект Promise
         return this[_send]('sendPhoto', qs);
     }
+
+    sendDocument(document, options = {}) {
+        let qs = Object.assign({}, { chat_id: this[_chatID] }, { document }, options);
+        return this[_send]('sendDocument', qs);
+    }
 }
 
 module.exports = Channel;

@@ -9,14 +9,14 @@ const choice = require('../core/choice');
 const jobFactory = require('../core/jobFactory');
 
 async function vkSpider(channel) {
-    let domains = ["anime", "anime_gate", "animeiking"];
+    let domains = ["anime_credo"];
     for (let domain of domains) {
         let posts = await getPosts(domain);
         if (posts) prepareVKPosts(channel, domain, posts);
     }
 }
 
-async function getPosts(domain, count = 15) {
+async function getPosts(domain, count = 3) {
     const baseURL = `https://api.vk.com/method/wall.get`;
     let qs = {
         domain,

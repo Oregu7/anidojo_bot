@@ -47,13 +47,16 @@
                 "time": 3600000
             },
             "news": {
-                "time": 10800000
+                "time": 3650000
             },
             "randomAnimeWallpapers": {
                 "time": 1800000
             },
             "vkSpider": {
-                "time": 600000
+                "time": 2100000
+            },
+            "randomGiphs": {
+                "time": 1600000
             }
         }
     }

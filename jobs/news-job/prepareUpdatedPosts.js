@@ -1,5 +1,6 @@
 const { newMessage, createInlineKeyboard } = require('telro').Utils;
 const cheerio = require('cheerio');
+const htmlToText = require('html-to-text');
 
 function prepareUpdatedPosts(channel, updates) {
     for (post of updates.newData) {
@@ -13,7 +14,7 @@ function prepareUpdatedPosts(channel, updates) {
         //после получения данных, удаляем параграфы(p)
         postData.find("p").remove();
         //получаем непосредственно описание
-        let description = postData.text();
+        let description = htmlToText.fromString(postData.text());
         //формируем message
         const message = getPostMessage({
             title: post.title,
