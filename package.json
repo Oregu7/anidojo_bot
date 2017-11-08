@@ -27,6 +27,6 @@
     "random-anime-wallpapers": "^1.1.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
-    "telro": "https://Sareth7@bitbucket.org/Sareth7/telro"
+    "telro": "^0.1.7"
   }
 }
