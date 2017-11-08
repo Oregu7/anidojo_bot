@@ -1,4 +1,4 @@
-const { newMessage, createInlineKeyboard } = require('telro').Utils;
+const { newMessage, createInlineKeyboard } = require('telbot').Utils;
 
 module.exports = (animanga, updates) => {
     //формируем текст сообщения

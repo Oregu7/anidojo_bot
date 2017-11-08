@@ -1,7 +1,7 @@
 const config = require('config');
 const rp = require('request-promise');
 const randAniWall = require('random-anime-wallpapers');
-const { createInlineKeyboard, newMessage } = require("telro").Utils;
+const { createInlineKeyboard, newMessage } = require("telbot").Utils;
 const choice = require('../core/choice');
 const jobFactory = require('../core/jobFactory');
 

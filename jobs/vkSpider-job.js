@@ -2,32 +2,33 @@ const config = require('config');
 const rp = require('request-promise');
 const storage = require('dirty')('updates.db');
 const htmlToText = require('html-to-text');
-const { createInlineKeyboard, newMessage } = require("telro").Utils;
+const { createInlineKeyboard, newMessage } = require("telbot").Utils;
 const getUpdates = require('../core/getUpdates');
 const hashUpdates = require('../core/hashUpdates');
 const choice = require('../core/choice');
 const jobFactory = require('../core/jobFactory');
 
 async function vkSpider(channel) {
-    let domains = ["anime_credo", "club143828286"];
-    for (let domain of domains) {
-        let posts = await getPosts(domain);
-        if (posts) prepareVKPosts(channel, domain, posts);
+    let groups = [{ domain: "anime_credo" }, { owner_id: "-143828286" }];
+    for (let group of groups) {
+        let posts = await getPosts(group);
+        if (posts) prepareVKPosts(channel, group, posts);
     }
 }
 
-async function getPosts(domain, count = 5) {
+async function getPosts(group, count = 5) {
     const baseURL = `https://api.vk.com/method/wall.get`;
-    let qs = {
-        domain,
+    let qs = Object.assign(group, {
         count,
         filter: "owner",
         access_token: process.env.SERVICE_KEY
-    };
+    });
     try {
         let { response } = JSON.parse(await rp.get({ uri: baseURL, qs }));
+        console.log(response);
         return response.map(item => {
-            let url = `https://vk.com/${domain}/post-${item.id}`;
+            let name = group.domain ? group.domain : `club${group.owner_id}`;
+            let url = `https://vk.com/${name}/post-${item.id}`;
             return Object.assign({}, item, { url });
         });
     } catch (err) {
@@ -36,8 +37,9 @@ async function getPosts(domain, count = 5) {
     }
 }
 
-function prepareVKPosts(channel, domain, posts) {
-    const link = `https://vk.com/${domain}/`;
+function prepareVKPosts(channel, group, posts) {
+    let name = group.domain ? group.domain : `club${group.owner_id}`;
+    const link = `https://vk.com/${name}/`;
     let oldPosts = storage.get(link) || [];
     let updates = getUpdates(oldPosts, posts);
     if (updates) {

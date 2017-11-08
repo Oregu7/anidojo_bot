@@ -1,4 +1,4 @@
-const { newMessage, createInlineKeyboard } = require('telro').Utils;
+const { newMessage, createInlineKeyboard } = require('telbot').Utils;
 const cheerio = require('cheerio');
 const htmlToText = require('html-to-text');
 

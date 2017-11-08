@@ -25,7 +25,8 @@ async function animanga(channel) {
                 //отправляем message в чат
                 channel.sendMessage(message.compile());
                 //обновляем данные в MongoDB(для vk-бота) и в локальном storage (хэши - hashUpdates)
-                updateDataFromDB(animanga, newChapters);
+                let ok = await updateDataFromDB(animanga, newChapters);
+                console.log(ok);
                 storage.set(animanga.site, hashUpdates(newChapters));
             } else {
                 console.info(`${animanga.site} => none`);

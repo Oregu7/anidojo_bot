@@ -1,5 +1,5 @@
 const config = require('config');
-const { createInlineKeyboard, newMessage } = require("telro").Utils;
+const { createInlineKeyboard, newMessage } = require("telbot").Utils;
 const rp = require('request-promise');
 const cheerio = require("cheerio");
 const jobFactory = require('../core/jobFactory');

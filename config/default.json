@@ -10,13 +10,6 @@
                 "Accept-Language": "ru-ru,ru;q=0.8,en-us;q=0.6,en;q=0.4"
             },
             "data": [{
-                    "site": "http://online.anidub.com",
-                    "rss": "http://online.anidub.com/rss.xml",
-                    "type": "anime",
-                    "start": 0,
-                    "last": 10
-                },
-                {
                     "site": "http://animevost.org",
                     "rss": "http://animevost.org/rss.xml",
                     "type": "anime",
@@ -41,7 +34,7 @@
         },
         "jobs": {
             "animanga": {
-                "time": 1500000
+                "time": 2500000
             },
             "randomManga": {
                 "time": 3600000

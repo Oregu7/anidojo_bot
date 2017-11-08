@@ -5,9 +5,9 @@ const animangaUpdatesSchema = mongoose.Schema({
     type: { type: String, enum: ["manga", "anime", "ranobe"], lowercase: true, required: true, index: true },
     chapters: [{
         url: String,
-        text: String
+        title: String
     }],
-    _created: { type: Date },
+    _created: { type: Date, default: Date.now },
     _modified: { type: Date, default: Date.now },
 });
 
