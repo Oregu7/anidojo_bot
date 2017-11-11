@@ -34,22 +34,22 @@
         },
         "jobs": {
             "animanga": {
-                "time": 2500000
+                "time": 3600000
             },
             "randomManga": {
-                "time": 3600000
+                "time": 10800000
             },
             "news": {
                 "time": 3650000
             },
             "randomAnimeWallpapers": {
-                "time": 1800000
+                "time": 12600000
             },
             "vkSpider": {
                 "time": 2100000
             },
             "randomGiphs": {
-                "time": 4600000
+                "time": 7200000
             }
         }
     }
