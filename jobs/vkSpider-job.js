@@ -9,7 +9,7 @@ const choice = require('../core/choice');
 const jobFactory = require('../core/jobFactory');
 
 async function vkSpider(channel) {
-    let groups = [{ domain: "anime_credo" }, { owner_id: "-143828286" }];
+    let groups = [{ domain: "anime_credo" }, { owner_id: "-143828286" }, { domain: "world1_anime15" }];
     for (let group of groups) {
         let posts = await getPosts(group);
         if (posts) prepareVKPosts(channel, group, posts);
@@ -59,8 +59,8 @@ function prepareVKPosts(channel, group, posts) {
 function sendVKPostMessage(channel, post) {
     let { text = '', attachment = null } = post;
     if (!attachment || attachment.type === 'photo') {
-        if (text.length) channel.sendMessage(createVKPostMessage(text, attachment))
-        else if (text.length === 0 && attachment) {
+        //if (text.length) channel.sendMessage(createVKPostMessage(text, attachment))
+        if (text.length === 0 && attachment) {
             let { photo, caption } = createVKPhotoMessage(attachment);
             channel.sendPhoto(photo, { caption });
         }
