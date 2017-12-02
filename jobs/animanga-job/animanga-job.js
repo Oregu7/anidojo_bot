@@ -21,9 +21,9 @@ async function animanga(channel) {
             //если они есть, то
             if (updates) {
                 //если мы получили обновления, то готовим message для отправки
-                let message = prepareChaptersUpdates(animanga, updates);
+                //let message = prepareChaptersUpdates(animanga, updates);
                 //отправляем message в чат
-                channel.sendMessage(message.compile());
+                //channel.sendMessage(message.compile());
                 //обновляем данные в MongoDB(для vk-бота) и в локальном storage (хэши - hashUpdates)
                 let ok = await updateDataFromDB(animanga, newChapters);
                 console.log(ok);

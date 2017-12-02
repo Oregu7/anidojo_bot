@@ -8,8 +8,10 @@ const hashUpdates = require('../core/hashUpdates');
 const choice = require('../core/choice');
 const jobFactory = require('../core/jobFactory');
 
+//initialize
+const groups = config.get("Customer.jobs.vkSpider.groups");
+
 async function vkSpider(channel) {
-    let groups = [{ domain: "anime_credo" }, { owner_id: "-143828286" }, { domain: "world1_anime15" }];
     for (let group of groups) {
         let posts = await getPosts(group);
         if (posts) prepareVKPosts(channel, group, posts);

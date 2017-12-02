@@ -46,7 +46,14 @@
                 "time": 12600000
             },
             "vkSpider": {
-                "time": 2100000
+                "time": 2100000,
+                "groups": [
+                    { "domain": "anime_credo" },
+                    { "owner_id": "-143828286" },
+                    { "domain": "world1_anime15" },
+                    { "domain": "animedurak" }
+                ]
+
             },
             "randomGiphs": {
                 "time": 7200000
