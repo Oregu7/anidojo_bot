@@ -27,7 +27,8 @@ async function getPosts(group, count = 5) {
     });
     try {
         let { response } = JSON.parse(await rp.get({ uri: baseURL, qs }));
-        console.log(response);
+        if (!response) return false;
+
         return response.map(item => {
             let name = group.domain ? group.domain : `club${group.owner_id}`;
             let url = `https://vk.com/${name}/post-${item.id}`;

@@ -48,10 +48,9 @@
             "vkSpider": {
                 "time": 2100000,
                 "groups": [
-                    { "domain": "anime_credo" },
-                    { "owner_id": "-143828286" },
-                    { "domain": "world1_anime15" },
-                    { "domain": "animedurak" }
+                    { "domain": "anime_web_fun" },
+                    { "domain": "animeshnik_navsegda" },
+                    { "domain": "animetyanarts" }
                 ]
 
             },
