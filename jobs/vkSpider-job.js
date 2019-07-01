@@ -21,6 +21,7 @@ async function vkSpider(channel) {
 async function getPosts(group, count = 5) {
     const baseURL = `https://api.vk.com/method/wall.get`;
     let qs = Object.assign(group, {
+        v: "5.100",
         count,
         filter: "owner",
         access_token: process.env.SERVICE_KEY
